@@ -17,7 +17,6 @@ win.setup(width=800, height = 800)
 win.tracer(0)
 turtle.setworldcoordinates(-20, -20, 600, 600)
 #arrayLight[23] = 1
-mouseClick = 0
 def getNewList (x,y):
     row = y/50
     col = x/50
@@ -88,7 +87,9 @@ def flip ( x, y):
             arrayLight[targetIndex] = 0 
         elif arrayLight[targetIndex] == 0:
             turtleList[targetIndex].color("blue")
-            arrayLight[targetIndex] = 1    
+            arrayLight[targetIndex] = 1
+    
+    mouseClick += 1 
     
     
     
