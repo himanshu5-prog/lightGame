@@ -1,0 +1,8 @@
+# lightGame
+A simple game based on codechef question - Lights out
+
+The game consist of 10 x 10 array of LEDs. When the led is left clicked, the color gets toggled. Apart from the selected LED, non-diagonal LEDS also get toggled.
+
+Initially all the LEDs are of same color. Try to change color of all LEDS.
+
+Have fun!
