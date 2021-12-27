@@ -22,8 +22,15 @@ win.title ("Lights out")
 win.bgcolor("black")
 win.setup(width=800, height = 800)
 win.tracer(0)
-turtle.setworldcoordinates(-20, -20, 600, 600)
-#arrayLight[23] = 1
+turtle.setworldcoordinates(-50, -50, 700, 700)
+
+pen3 = turtle.Turtle()
+pen3.speed(0)
+pen3.color ("white")
+pen3.penup()
+pen3.hideturtle()
+pen3.goto (300, 475)
+    
 def getNewList (x,y):
     row = y/50
     col = x/50
@@ -95,6 +102,17 @@ def flip ( x, y):
         elif arrayLight[targetIndex] == 0:
             turtleList[targetIndex].color("blue")
             arrayLight[targetIndex] = 1
+    greenCount = 0
+    blueCount = 0
+
+    for index1 in range(100):
+        if (arrayLight[index1] == 0): greenCount += 1
+        elif (arrayLight[index1] == 1): blueCount += 1
+
+    print ("Blue LED: ", blueCount, " | green LEDs: ", greenCount)
+    
+    pen3.clear()    
+    pen3.write (" Blue LED count: {}, Green LED count: {}".format(blueCount, greenCount), align="center", font=("Courier", 20, "normal"))
     
 for index in range(num):
     obj = turtleList[index]
@@ -120,12 +138,33 @@ pen2.speed(0)
 pen2.color ("white")
 pen2.penup()
 pen2.hideturtle()
-pen2.goto (250, 500)
+pen2.goto (350, 500)
 pen2.write (" Change color of all LEDs to blue from green", align="center", font=("Courier", 20, "normal"))
 
 win.onclick(getNewList,2)
 win.onclick(getNewList_2, 3)
 win.onclick(flip, 1)
+
+maxGreenCount = 0
+maxBlueCount = 0
+
+pen4 = turtle.Turtle()
+pen4.speed(0)
+pen4.color ("white")
+pen4.penup()
+pen4.hideturtle()
+#pen3.clear()
+pen4.goto (650, 575)
 while True:
+    greenCount = 0
+    blueCount = 0
+    for index_2 in range(100):
+        if ( arrayLight[index_2] == 0) : greenCount += 1
+        elif (arrayLight[index_2] == 1): blueCount += 1
+    
+    maxGreenCount = max(maxGreenCount, greenCount)
+    maxBlueCount = max (maxBlueCount, blueCount)
+    pen4.clear()
+    pen4.write(" max blue count: {}, max green count: {}".format(maxBlueCount, maxGreenCount), align="right", font = ("Courier", 20, "bold"))
     win.update()
         
