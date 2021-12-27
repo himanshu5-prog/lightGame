@@ -1,2 +1,2 @@
 # lightGame
-A simple game based on codechef question - Lights out
+A simple game based on puzzle - Lights out
