@@ -1,4 +1,5 @@
 import turtle
+import random
 
 def getRow (x):
     return x%10
@@ -6,7 +7,13 @@ def getRow (x):
 def getCol (x):
     return x/10
 
+#arrayLight = [0 for i in range(100)]
 arrayLight = [0 for i in range(100)]
+
+## Random initialisation 
+
+for index in range(100):
+    arrayLight[index] = random.randrange(0,2)
 num = 100
 turtleList = [turtle.Turtle() for i in range(num)]
 
