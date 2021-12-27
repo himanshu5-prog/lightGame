@@ -89,11 +89,6 @@ def flip ( x, y):
             turtleList[targetIndex].color("blue")
             arrayLight[targetIndex] = 1
     
-    mouseClick += 1 
-    
-    
-    
-    
 for index in range(num):
     obj = turtleList[index]
     obj.speed(0)
