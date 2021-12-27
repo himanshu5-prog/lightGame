@@ -17,7 +17,7 @@ win.setup(width=800, height = 800)
 win.tracer(0)
 turtle.setworldcoordinates(-20, -20, 600, 600)
 #arrayLight[23] = 1
-
+mouseClick = 0
 def getNewList (x,y):
     row = y/50
     col = x/50
@@ -90,6 +90,9 @@ def flip ( x, y):
             turtleList[targetIndex].color("blue")
             arrayLight[targetIndex] = 1    
     
+    
+    
+    
 for index in range(num):
     obj = turtleList[index]
     obj.speed(0)
@@ -108,6 +111,14 @@ for index in range(num):
     x_coord = 50*int(row)
     y_coord = 50*int(col)
     obj.goto(x_coord, y_coord)
+
+pen2 = turtle.Turtle()
+pen2.speed(0)
+pen2.color ("white")
+pen2.penup()
+pen2.hideturtle()
+pen2.goto (250, 500)
+pen2.write (" Change color of all LEDs to blue from green", align="center", font=("Courier", 20, "normal"))
 
 win.onclick(getNewList,2)
 win.onclick(getNewList_2, 3)
