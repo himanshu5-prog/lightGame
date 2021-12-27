@@ -109,9 +109,9 @@ for index in range(num):
     y_coord = 50*int(col)
     obj.goto(x_coord, y_coord)
 
-win.onclick(getNewList,1)
+win.onclick(getNewList,2)
 win.onclick(getNewList_2, 3)
-win.onclick(flip, 2)
+win.onclick(flip, 1)
 while True:
     win.update()
         
